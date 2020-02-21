@@ -1,0 +1,29 @@
+@import: ../stdjahtml
+@import: ../code
+@import: ../itemize
+@import: ../url
+
+document (|
+  title = {test};
+  author = {puripuri2100};
+  style-sheet = ` `;
+|) '<
+  +section ?:(`sec1`){sec1} <
+    +subsection{subsec1} <
+      +p{test\emph{empth}\ref(`sec1`);}
+    >
+  >
+  +code(```
+let id x = x
+  let zero = 0
+  ```);
+
+  +enumerate{
+    * hoge
+      ** fuga
+    * hoge2
+      ** fuga2
+        *** piyo3
+      ** fuga2-1
+  }
+>
