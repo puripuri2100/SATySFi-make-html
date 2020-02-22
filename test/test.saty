@@ -1,7 +1,7 @@
-@import: ../stdjahtml
-@import: ../code
-@import: ../itemize
-@import: ../url
+@require: make-html/stdjahtml
+@require: make-html/code
+@require: make-html/itemize
+@require: make-html/url
 
 document (|
   title = {test};

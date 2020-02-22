@@ -1,8 +1,8 @@
 opam-version: "2.0"
 name: "satysfi-make-html"
 version: "0.1.0"
-synopsis: "SATySFi-make-html are SATySFi packages that outputting HTML file using SATySFi's text-mode."
-description: """SATySFi-make-html are SATySFi packages that outputting HTML file using SATySFi's text-mode."""
+synopsis: "outputting HTML file using SATySFi's text-mode."
+description: """outputting HTML file using SATySFi's text-mode."""
 
 maintainer: "Naoki Kaneko <puripuri2100@gmail.com>"
 authors: "Naoki Kaneko <puripuri2100@gmail.com>"
