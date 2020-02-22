@@ -1,0 +1,17 @@
+;; For Satyrographos 0.0.2 series
+(version 0.0.2)
+
+(library
+  (name "make-html")
+  (version "0.1.0")
+  (sources
+    (
+     (package "stdjahtml.satyh-html" "./stdjahtml.satyh-html")
+     (package "code.satyh-html" "./code.satyh-html")
+     (package "itemize.satyh-html" "./itemize.satyh-html")
+     (package "url.satyh-html" "./url.satyh-html")
+    )
+  )
+  (opam "satysfi-make-html.opam")
+  (dependencies ())
+  (compatibility ((satyrographos "0.0.1"))))
