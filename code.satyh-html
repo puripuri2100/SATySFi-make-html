@@ -69,7 +69,7 @@ let-inline tinfo \code code =
 
 
 let-inline tinfo \console code =
-  HTMLBase.tag ?:[(`class`, `console-display`)] ?:(false) tinfo `div` (fun tinfo -> scheme tinfo code true `<br>`)
+  HTMLBase.tag ?:[(`class`, `console-inline`)] ?:(false) tinfo `div` (fun tinfo -> scheme tinfo code true `<br>`)
 
 
 let-inline tinfo \d-code code =
