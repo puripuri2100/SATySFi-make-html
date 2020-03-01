@@ -7,11 +7,7 @@ SATySFi-make-html are SATySFi packages that outputting HTML file using SATySFi's
 ## Satyrographos
 
 ```
-git clone https://github.com/puripuri2100/SATySFi-make-html.git
-
-cd SATySFi-make-html
-
-opam pin add -v "file://$PWD"
+opam install satysfi-make-html
 
 satyrographos install
 ```
