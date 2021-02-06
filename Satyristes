@@ -3,15 +3,35 @@
 
 (library
   (name "make-html")
-  (version "0.1.0")
+  (version "0.1.1")
   (sources
-    (
-     (package "stdjahtml.satyh-html" "./stdjahtml.satyh-html")
-     (package "code.satyh-html" "./code.satyh-html")
-     (package "itemize.satyh-html" "./itemize.satyh-html")
-     (package "url.satyh-html" "./url.satyh-html")
-    )
-  )
+    ((packageDir "src")))
   (opam "satysfi-make-html.opam")
-  (dependencies ())
-  (compatibility ((satyrographos "0.0.1"))))
+  (dependencies (
+    (dist ())
+  ))
+  )
+
+;; Library doc declaration
+(libraryDoc
+  ;; Library doc name
+  (name "make-html-doc")
+  ;; Library version
+  (version "0.1.1")
+  ;; Working directory to build docs
+  (workingDirectory "doc")
+  ;; Build commands
+  (build
+    ;; Run SATySFi
+    ((satysfi "doc-ja.saty" "-o" "doc-ja.pdf")))
+  ;; Files
+  (sources
+    ((doc "doc-ja.pdf" "doc/doc-ja.pdf")))
+  ;; OPAM package file
+  (opam "satysfi-make-html-doc.opam")
+  ;; Dependency
+  (dependencies
+    ((make-html ()) ; the main library
+     (dist ())
+    )))
+

@@ -1,8 +1,8 @@
 opam-version: "2.0"
-name: "satysfi-make-html"
+name: "satysfi-make-html-doc"
 version: "0.1.1"
-synopsis: "Outputting HTML file using SATySFi's text-mode"
-description: """Outputting HTML file using SATySFi's text-mode."""
+synopsis: "Document: Outputting HTML file using SATySFi's text-mode"
+description: """Document: Outputting HTML file using SATySFi's text-mode."""
 
 maintainer: "Naoki Kaneko <puripuri2100@gmail.com>"
 authors: "Naoki Kaneko <puripuri2100@gmail.com>"
@@ -15,11 +15,17 @@ depends: [
   "satysfi" {>= "0.0.3" & < "0.0.7"}
   "satyrographos" {>= "0.0.2" & < "0.0.4"}
   "satysfi-dist"
+  "satysfi-make-html" {= "%{version}%"}
 ]
-build: [ ]
+build: [
+  ["satyrographos" "opam" "build"
+   "-name" "make-html-doc"
+   "-prefix" "%{prefix}%"
+   "-script" "%{build}%/Satyristes"]
+]
 install: [
   ["satyrographos" "opam" "install"
-   "-name" "make-html"
+   "-name" "make-html-doc"
    "-prefix" "%{prefix}%"
    "-script" "%{build}%/Satyristes"]
 ]

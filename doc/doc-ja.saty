@@ -1,0 +1,81 @@
+@require: stdjabook
+@require: code
+@require: annot
+@require: itemize
+
+document (|
+  title = {make-html};
+  author = {Naoki Kaneko (a.k.a. "puripuri2100")};
+  show-title = true;
+  show-toc = false;
+|) '<
+
+  +section {想定している使い方} <
+
+    +p{SATySFiのテキストモードでHTMLを出力するときに使用してください。}
+    +p{言語はhtmlを指定してください。}
+    +p{例えばこのように感じです。}
+    +code(`
+satysfi <input>.saty --text-mode "html" -o <output>.html
+`);
+
+  >
+
+  +section {このリポジトリにあるパッケージ} <
+    +listing {
+      * stdjahtml.satyh-html
+      * code.satyh-html
+      * itemize.satyh-html
+      * url.satyh-html
+    }
+  >
+
+  +section {提供コマンド} <
+
+    +subsection {stdjahtml.satyh-html} <
+
+      +p{module \code(`StdJaHTML`);}
+      +listing{
+        * \code(`direct \ref : [string] inline-cmd`); : ラベルの参照をします。
+        * \code(`direct \figure : [string?; inline-text; block-text] inline-cmd`); : 画像を貼れます。
+        * \code(`direct +section : [string?; inline-text; block-text] block-cmd`); : 節です。
+        * \code(`direct +subsection : [string?; inline-text; block-text] block-cmd`); : 小節です。
+        * \code(`direct +p : [inline-text] block-cmd`); : 段落です。
+        * \code(`direct +pn : [inline-text] block-cmd`); : 段落です。
+        * \code(`direct \emph : [inline-text] inline-cmd`); : 強調できます。
+      }
+    >
+
+    +subsection {code.satyh-html} <
+
+      +p{module \code(`Code`);}
+      +listing {
+
+        * \code(`direct +code : [string] block-cmd`); : ブロックでのコードです。\code(`class`);は\code(`code-display`);です。
+        * \code(`direct +console : [string] block-cmd`); : ブロックでのコンソールです。\code(`class`);は\code(`console-display`);です。
+        * \code(`direct \code : [string] inline-cmd`); : インラインでのコードです。\code(`class`);は\code(`code-inline`);です。
+        * \code(`direct \console : [string] inline-cmd`); : インラインでのコンソールです。\code(`class`);は\code(`console-inline`);です。
+        * \code(`direct \d-code : [string] inline-cmd`); : ブロックでのコードをインラインで書けます。\code(`class`);は\code(`code-display`);です。
+      }
+    >
+
+    +subsection{itemize.satyh-html} <
+      +p{module \code(`Itemize`);}
+      +listing {
+        * \code(`val listing : text-info -> itemize -> string`); : 箇条書きのhtmlコードを返します。
+        * \code(`direct +listing : [itemize] block-cmd`); : ブロックの箇条書きです。
+        * \code(`direct \listing : [itemize] inline-cmd`); : インラインの箇条書きです。
+        * \code(`val enumerate : text-info -> itemize -> string`); : 数字付き箇条書きのhtmlコードを返します。
+        * \code(`direct +enumerate : [itemize] block-cmd`); : ブロックの数字付き箇条書きです。
+        * \code(`direct \enumerate : [itemize] inline-cmd`);: インラインの数字付き箇条書きです。
+      }
+    >
+    +subsection {url.satyh-html} <
+      +p{module \code(`Url`);}
+      +listing {
+        * \code(`direct \href : [string; inline-text] inline-cmd`); : ハイパーリンクです。
+        * \code(`direct \url : [string] inline-cmd`); : URLを表示したいときに
+      }
+    >
+  >
+>
